@@ -11,9 +11,13 @@ from django_countries.fields import CountryField
 from model_utils.models import TimeStampedModel
 
 import datasource.models as dsm
+<<<<<<< HEAD
 from datasource.constants import lev_distance, model_names
 
 # from Levenshtein import distance as lev
+=======
+from datasource.constants import model_names
+>>>>>>> origin/main
 
 
 def validate_tag(value):

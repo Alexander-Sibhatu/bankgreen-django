@@ -104,6 +104,7 @@ class BrandsView(APIView):
             return Response(serializer.data, status=status_code)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 
     @api_view(["GET"])
@@ -115,6 +116,8 @@ class BrandsView(APIView):
         except Commentary.DoesNotExist:
             return Response({"error": "Bank commentary not found"}, status=404)
 =======
+=======
+>>>>>>> origin/main
 
 
 class BrandFeatureOverride(APIView):
@@ -160,4 +163,7 @@ class BrandFeatureOverride(APIView):
         return Response(
             {"error": serializer.errors["feature_override"]}, status=status.HTTP_400_BAD_REQUEST
         )
+<<<<<<< HEAD
 >>>>>>> 7b4cd04da2fb31b47755f9090beecb8cc0df7d78
+=======
+>>>>>>> origin/main
