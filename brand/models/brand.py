@@ -10,6 +10,8 @@ from cities_light.models import Region, SubRegion
 from django_countries.fields import CountryField
 from model_utils.models import TimeStampedModel
 
+import datasource.models as dsm
+from datasource.constants import lev_distance, model_names
 
 # from Levenshtein import distance as lev
 
