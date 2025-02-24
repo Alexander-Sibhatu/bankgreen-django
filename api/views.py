@@ -17,6 +17,8 @@ from brand.models import Commentary
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+from django.utils import timezone
+
 class BrandSuggestionAPIView(APIView):
     permission = [permissions.IsAuthenticated]
 
@@ -76,6 +78,9 @@ class BrandsView(APIView):
 
         # Try to retrieve an existing brand by 'tag'
         brand_instance = Brand.objects.filter(tag=tag).first()
+        #setting the review date
+        request_data = request.data.copy()
+        request_data['last_reviewed'] = timezone.now()
 
         # Initialize the serializer with the instance (if found) or None (if not found)
         serializer = BrandSerializer(brand_instance, data=request.data, partial=True)
